@@ -2,7 +2,7 @@
 
 # Course Title: Software Engineering
 ## Course Code: CSE305
-## Project proposal:Assignment On School Management and Student Assessment system
+## Project Name: Assignment On School Management and Student Assessment system
 
 The SDLC, or Software Development Life Cycle, is used to create software for student assessment systems and school management systems. Developers of software utilize the Software Development Life Cycle (SDLC) as a methodical approach to design, create, test, and implement software. The suggested SDLC is provided here, along with a synopsis of each stage.
 
