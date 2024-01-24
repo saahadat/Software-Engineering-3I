@@ -149,4 +149,15 @@ Wide-ranging features should be included in a school administration and student 
     - Implement regular data backups to prevent data loss.
     - Ensure robust security measures to protect sensitive information.
 
-These functionalities collectively provide a comprehensive solution for managing school operations, enhancing communication, and facilitating effective student assessment. The specific requirements may vary based on the unique needs of the educational institution.
+When taken as a whole, these features offer a complete solution for improving communication, overseeing school operations, and enabling efficient student assessment. Depending on the particular criteria of the educational institution, the requirements may change.
+
+## Submitted By    
+**Mohammad Shahadat Ali Mollah**    
+**Id: 1802044**  
+**Level : 3 Semester : I**  
+
+## Submitted To  
+**Pankaj Bhowmik**  
+**Lecturer**   
+**Department of Computer Science and Engineering, HSTU**
+
