@@ -157,7 +157,7 @@ When taken as a whole, these features offer a complete solution for improving co
 **Level : 3 Semester : I**  
 
 ## Submitted To  
-**Pankaj Bhowmik**  
+# Pankaj Bhowmik  
 **Lecturer**   
 **Department of Computer Science and Engineering, HSTU**
 
