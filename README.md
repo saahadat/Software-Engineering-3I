@@ -57,7 +57,7 @@ Access to previous stages, where the variations are produced, is made possible b
 
 
 
-Here's how the Iterative Model would apply to the development of the School Management and Student Assessment System:
+**Here's how the Iterative Model would apply to the development of the School Management and Student Assessment System:**
 
 # 1. Requirement gathering & analysis: 
 In this phase, requirements are gathered from customers and check by an analyst whether requirements will fulfil or not. Analyst checks that need will achieve within budget or not. After all of this, the software team skips to the next phase.
