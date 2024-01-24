@@ -4,7 +4,7 @@
 ## Course Code: CSE305
 ## Project proposal:Assignment On School Management and Student Assessment system
 
-Software Development Life Cycle (SDLC) for developing a School Management and Student Assessment System software. The SDLC is a systematic process used by software developers to design, develop, test, and deploy software applications. Here is a suggested SDLC along with a brief description of each phase:
+The SDLC, or Software Development Life Cycle, is used to create software for student assessment systems and school management systems. Developers of software utilize the Software Development Life Cycle (SDLC) as a methodical approach to design, create, test, and implement software. The suggested SDLC is provided here, along with a synopsis of each stage.
 
 # Planning:
 
@@ -12,9 +12,9 @@ In this phase, gather requirements from stakeholders, identify project scope, an
 
 # Feasibility Study:
 
-Assess the technical, economic, legal, operational, and scheduling feasibility of the project. This phase helps in determining whether the project is viable and worth proceeding.
+Evaluate the project's viability from a technical, financial, legal, operational, and scheduling standpoint. This stage assists in evaluating the project's viability and worth.
 
-#System Design:
+# System Design:
 
 Create a detailed system design based on the gathered requirements. Design the architecture, database structure, user interface, and modules. This phase also involves creating prototypes or wireframes to visualize the system.
 
@@ -44,12 +44,13 @@ Conduct training sessions for end-users to familiarize them with the School Mana
 
 # Feedback and Iteration:
 
-Gather feedback from users and stakeholders after the system is in use. Use this feedback to make improvements and enhancements to the system in subsequent iterations.
-By following this SDLC, we can systematically develop a School Management and Student Assessment System software that meets the needs of educational institutions and facilitates efficient management and assessment processes.
+After the system is in use, get input from stakeholders and users. In future iterations, utilize this feedback to develop and enhance the system.
 
-In this Model, you can start with some of the software specifications and develop the first version of the software. After the first version if there is a need to change the software, then a new version of the software is created with a new iteration. Every release of the Iterative Model finishes in an exact and fixed period that is called iteration.
+Using this SDLC, we can systematically develop school management and student assessment system software that meets the needs of educational institutions while also facilitating efficient management and assessment processes.
 
-The Iterative Model allows the accessing earlier phases, in which the variations made respectively. The final output of the project renewed at the end of the Software Development Life Cycle (SDLC) process.
+With this model, we can create the initial software version by starting with a few of the parameters. If the software needs to be changed after the initial version, a new iteration of the program is developed. An iteration is a precise, predetermined span of time that ends with each release of the iterative model.
+
+Access to previous stages, where the variations are produced, is made possible by the iterative model. At the conclusion of the Software Development Life Cycle (SDLC) process, the project's final result is renewed.
 
 
 ![Iterative Model (1)](https://github.com/saahadat/Software-Engineering-3I/assets/72408859/f59c3285-1b35-4a7c-8e67-3391351dd2df)
