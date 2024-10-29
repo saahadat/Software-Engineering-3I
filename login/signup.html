@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang>
+
+<head>
+
+    <title>SignUp</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles4.css">
+
+
+</head>
+
+<body>
+
+    <h1>
+        SignUp
+    </h1>
+
+    <p>
+        Please fill up the boxes
+    </p>
+
+    <br>
+    <form action="process-signup.php" method ="post" novalidate>
+
+        <div>
+
+            <label for="name">Name</label>
+            <br>
+            <input type="text" id = "name" name="name">
+
+        </div>
+
+        <div>
+
+            <label for="email">email</label>
+            <br>
+            <input type ="email" id ="email" name ="email">
+
+        </div>
+
+        <div>
+
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password" name="password">
+            <input type="checkbox" onclick="myFunction()">Show Password
+
+        </div>
+
+        <div>
+
+            <label for="password_confirmation">Repeat password</label> 
+            <br>
+            <input type="password" id="password_confirmation" name ="password_confirmation">
+            <input type="checkbox" onclick="myFunction1()">Show Password
+
+        </div>
+
+        <button id="signup">Sign Up</button>
+
+    </form>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("password");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+
+        
+function myFunction1() {
+  var x = document.getElementById("password_confirmation");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+        </script>
+        
+
+</body>
+
+</html>

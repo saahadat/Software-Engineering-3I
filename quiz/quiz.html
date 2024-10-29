@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Catalogue</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style type="text/css">
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    padding: 1em 2em;
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-menu a {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2em 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Filter */
+.filter {
+    margin: 1em 0;
+}
+
+.filter label {
+    font-weight: bold;
+}
+
+.filter select {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Quiz List */
+#quizzes {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 1em;
+}
+
+.quiz-card {
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: left;
+}
+
+.quiz-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-card h3 {
+    font-size: 1.2em;
+    color: #4CAF50;
+}
+
+.quiz-card p {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0.5em;
+}
+
+.start-quiz {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.start-quiz:hover {
+    background-color: #388E3C;
+}
+
+/* Back to Home Link */
+.card {
+    margin: 1.5em 0;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Quiz Details */
+#quiz-details {
+    margin-top: 2em;
+    padding: 1em;
+    border-top: 2px solid #ddd;
+    display: none;
+}
+
+#quiz-title {
+    font-size: 1.5em;
+    color: #333;
+}
+
+
+     </style>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="logo">QuizMaster</div>
+        <nav class="nav-menu">
+            <a href="http://localhost/website/login/index.php">Home</a>
+            <a href="http://localhost/website/quiz/quiz.html">Quizzes</a>
+            <a href="http://localhost/website/quiz/about.php">About</a>
+            <a href="http://localhost/website/quiz/contact.php">Contact</a>
+            <a href="http://localhost/website/quiz/email_us.php">E-mail Us</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        
+        <h1>Quiz Catalogue</h1>
+        <div class="filter">
+            <label for="category">Filter by Category:</label>
+            <select id="category">
+                <!-- Categories will be loaded here via PHP -->
+            </select>
+        </div>
+<br>
+        <!-- Quiz List -->
+        <div id="quizzes">
+            <!-- Quizzes will be loaded here via PHP -->
+        </div>
+
+        <!-- Questions for Selected Quiz -->
+        <div id="quiz-details">
+            <h2 id="quiz-title"></h2>
+            <!--<div id="questions">
+                <!-- Questions and options will be loaded here 
+            </div>-->
+        </div>
+    </div>
+    <a class="card" href="http://localhost/website/login/index.php">Back to Home</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadCategories();
+            loadQuizzes();
+
+            document.getElementById("category").addEventListener("change", function() {
+                loadQuizzes(this.value);
+            });
+        });
+
+        function loadCategories() {
+            fetch('fetch_categories.php')
+                .then(response => response.json())
+                .then(data => {
+                    const categorySelect = document.getElementById('category');
+                    categorySelect.innerHTML = '<option value="all">All Categories</option>';
+                    data.forEach(category => {
+                        categorySelect.innerHTML += `<option value="${category.id}">${category.name}</option>`;
+                    });
+                });
+        }
+
+        /*function loadQuizzes(categoryId = 'all') {
+            fetch(`fetch_quizzes.php?category_id=${categoryId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const quizzesDiv = document.getElementById('quizzes');
+                    quizzesDiv.innerHTML = '';
+                    data.forEach(quiz => {
+                        quizzesDiv.innerHTML += `<div class="quiz-card" onclick="loadQuizDetails(${quiz.id})">
+                            <h3>${quiz.title}</h3>
+                            <p>${quiz.description}</p>
+                        </div>`;
+                    });
+                });
+        }*/
+        function loadQuizzes(categoryId = 'all') {
+    fetch(`fetch_quizzes.php?category_id=${categoryId}`)
+        .then(response => response.json())
+        .then(data => {
+            const quizzesDiv = document.getElementById('quizzes');
+            quizzesDiv.innerHTML = ''; // Clear previous quizzes
+
+            // Loop over the quizzes and create HTML for each one
+            data.forEach(quiz => {
+                quizzesDiv.innerHTML += `<div class="quiz-card">
+                    <h3>${quiz.title}</h3>
+                    <p>${quiz.description}</p>
+                    <a href="quiz.php?quiz_id=${quiz.id}" class="start-quiz">Start Quiz</a> <!-- Link to quiz.php with quiz_id -->
+                </div>`;
+            });
+        });
+}
+
+
+       /* function loadQuizDetails(quizId) {
+            fetch(`fetch_quiz_details.php?quiz_id=${quizId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('quiz-title').textContent = data.quiz_title;
+
+                    const questionsDiv = document.getElementById('questions');
+                    questionsDiv.innerHTML = ''; // Clear previous questions
+
+                    data.questions.forEach((question, index) => {
+                        let questionHtml = `<div class="question">
+                            <h4>Q${index + 1}: ${question.question_text}</h4>`;
+
+                        question.options.forEach(option => {
+                            questionHtml += `
+                                <label>
+                                    <input type="radio" name="question_${question.id}" value="${option.id}">
+                                    ${option.option_text}
+                                </label><br>`;
+                        });
+
+                        questionHtml += `</div>`;
+                        questionsDiv.innerHTML += questionHtml;
+                    });
+                });
+        }*/
+    </script>
+    
+</body>
+</html>

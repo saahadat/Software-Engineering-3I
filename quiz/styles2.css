@@ -1,0 +1,116 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #20b6ca;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    background-color: #89c8e3;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 20px auto;
+}
+
+/* Quiz title */
+h1 {
+    color: #0a79b0;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    padding-top: 30px;
+}
+
+/* Result styling */
+h2 {
+    text-align: center;
+    color: #4caf50;
+    font-size: 1.5em;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+}
+
+/* Question styling */
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+}
+
+.question h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Radio button options */
+label {
+    display: block;
+    background-color: #e3f2fd;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+label:hover {
+    background-color: #bbdefb;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #1e88e5;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1565c0;
+}
+h1.last{
+
+    color: #0056b3;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-top: 30px;
+
+}
+a.last{
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #4caf50;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
